@@ -6,28 +6,45 @@ let currentRoundNumber = 1;
 
 function generateTarget(){
 let rndNum = Math.floor(Math.random() * 10);
-console.log(rndNum)
+return rndNum;
 };
 
 function compareGuesses(humanGuess, computerGuess, secretTargetGuess ){
 
-    let humanGuess = Math.floor(Math.random() * 10);
-    let computerGuess = Math.floor(Math.random() * 10);
-    let secretTargetGuess = generateTarget();
+      //humanGuess = Math.floor(Math.random() * 10);
+      //computerGuess = Math.floor(Math.random() * 10);
+      //secretTargetGuess = generateTarget();
 
-    console.log(humanGuess);
-    console.log(computerGuess);
-    console.log(secretTargetGuess);
+    //console.log(humanGuess);
+    //console.log(computerGuess);
+    //console.log(secretTargetGuess);
 
     let humanVal = Math.abs(secretTargetGuess - humanGuess);
     let computerVal = Math.abs(secretTargetGuess - computerGuess);
 
-if(humanVal === computerVal){
-    return true ;
-}else if (humanVal > computerVal){
-    return true ;
-}else if(computerValn < humanVal){
-    return false;
-}
+        if(humanVal > 9 || humanVal < 0 ){
+            alert('Please enter a number between 0 and 9');
+
+         if (humanVal > computerVal)
+            return true ;
+            else 
+            return false;
 
 };
+
+function updateScore(winner){
+
+    if (winner === 'human')
+        humanScore ++;
+    //console.log(humanScore);
+    else if(winner === 'computer')
+        computerScore ++
+     //console.log(humanScore)
+    
+
+}
+
+function advanceRound (){
+    currentRoundNumber ++ ;
+}
+
